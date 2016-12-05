@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<nav><a href="LogoutServlet">Logout</a>
+</nav>
+<script>
+function validateForm() {
+    var x = document.forms["form"]["essay"].value;
+    if (x == null || x == "") {
+        document.getElementById("msg").innerHTML="Essay cannot be left blank";
+        return false;
+    }
+}
+</script>
+<body bgcolor="pink">
+<h1> Essay Question</h1>
+<p id="msg" style="color:red"></p>
+<form action="EssayServlet" method="post" name="form" onsubmit="return validateForm()">
+<input type="text" name="essay" size="150"><br/>
+<input type="submit" value="Submit Exam"  >
+</form>
+
+</body>
+</html>
